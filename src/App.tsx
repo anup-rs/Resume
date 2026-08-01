@@ -71,7 +71,7 @@ export default function App() {
   }, []);
 
   const handleCopyEmail = () => {
-    const contactEmail = import.meta.env.VITE_CONTACT_EMAIL || "anupkushwaha470@gmail.com";
+    const contactEmail = "anupkushwaha470@gmail.com";
     navigator.clipboard.writeText(contactEmail);
     setCopied(true);
     showToast("Email copied to clipboard!");
@@ -91,7 +91,7 @@ export default function App() {
     }
     setFormSending(true);
     try {
-      const emailEndpoint = import.meta.env.VITE_CONTACT_EMAIL || "anupkushwaha470@gmail.com";
+      const emailEndpoint = "anupkushwaha470@gmail.com";
       const response = await fetch(`https://formsubmit.co/ajax/${emailEndpoint}`, {
         method: "POST",
         headers: {
@@ -331,7 +331,7 @@ export default function App() {
               onClick={handleCopyEmail}
               className="flex-1 flex items-center justify-between gap-2.5 px-3 py-1.5 bg-white/10 hover:bg-white/15 border border-white/5 hover:border-white/10 text-white rounded-xl text-xs font-mono transition-all duration-200 hover:scale-[1.01] active:scale-98 group cursor-pointer"
             >
-              <span className="truncate">{import.meta.env.VITE_CONTACT_EMAIL}</span>
+              <span className="truncate">anupkushwaha470@gmail.com</span>
               {copied ? (
                 <Check size={14} className="text-emerald-400 shrink-0" />
               ) : (
