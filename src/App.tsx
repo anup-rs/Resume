@@ -7,6 +7,7 @@ import {
 import { RevealLayer } from './components/RevealLayer';
 import baseImage from './base_image.png';
 import mainImage from './main_image.png';
+import sqlCertificate from './sql_advanced_certificate.jpg';
 
 const BG_IMAGE_1 = mainImage;
 const BG_IMAGE_2 = baseImage;
@@ -666,11 +667,10 @@ export default function App() {
                   Passed the Advanced SQL standard evaluation demonstrating proficiency in complex queries, subqueries, relational database schemas, multi-table joins, aggregations, and performance index mapping.
                 </p>
                 <div className="w-full max-w-xl aspect-[1.414/1] rounded-xl overflow-hidden border border-white/10 bg-black/40">
-                  <iframe
-                    src="https://www.hackerrank.com/certificates/iframe/3c3ea3195b67"
-                    title="HackerRank Advanced SQL Certificate"
-                    className="w-full h-full border-none"
-                    style={{ minHeight: '320px' }}
+                  <img
+                    src={sqlCertificate}
+                    alt="HackerRank Advanced SQL Certificate"
+                    className="w-full h-full object-contain"
                   />
                 </div>
               </div>
