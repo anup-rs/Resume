@@ -624,6 +624,21 @@ export default function App() {
 
           <div className="relative border-l border-white/10 pl-6 sm:pl-8 ml-2 sm:ml-4 space-y-12">
 
+            {/* Milestone 1 */}
+            <div id="milestone-college" className="relative group">
+              <div className="absolute -left-[31px] sm:-left-[39px] top-1 bg-[#e8702a] text-black w-6.5 h-6.5 rounded-full flex items-center justify-center border border-black z-40 transition-transform duration-300 group-hover:scale-110">
+                <BookOpen size={13} />
+              </div>
+              <div className="bg-[#121214] border border-white/5 rounded-2xl p-6 transition-all duration-300 hover:border-white/15">
+                <span className="text-[#e8702a] text-xs font-semibold uppercase tracking-wider block mb-1">Graduation 2029</span>
+                <h3 className="text-lg sm:text-xl font-bold text-white">National Institute of Electronics & Information Technology (NIELIT)</h3>
+                <span className="text-sm font-semibold text-white/50 block mb-3">Gorakhpur, India</span>
+                <p className="text-sm text-white/70 leading-relaxed">
+                  B.Tech in Electronics & Communication Engineering (ECE). Successfully finished 1st year with core physics foundation, electronics basic setups, and algorithm structuring classes.
+                </p>
+              </div>
+            </div>
+
             {/* Milestone Cert */}
             <div id="milestone-sql-cert" className="relative group">
               <div className="absolute -left-[31px] sm:-left-[39px] top-1 bg-[#e8702a] text-black w-6.5 h-6.5 rounded-full flex items-center justify-center border border-black z-40 transition-transform duration-300 group-hover:scale-110">
@@ -657,21 +672,6 @@ export default function App() {
                     style={{ minHeight: '320px' }}
                   />
                 </div>
-              </div>
-            </div>
-
-            {/* Milestone 1 */}
-            <div id="milestone-college" className="relative group">
-              <div className="absolute -left-[31px] sm:-left-[39px] top-1 bg-[#e8702a] text-black w-6.5 h-6.5 rounded-full flex items-center justify-center border border-black z-40 transition-transform duration-300 group-hover:scale-110">
-                <BookOpen size={13} />
-              </div>
-              <div className="bg-[#121214] border border-white/5 rounded-2xl p-6 transition-all duration-300 hover:border-white/15">
-                <span className="text-[#e8702a] text-xs font-semibold uppercase tracking-wider block mb-1">Graduation 2029</span>
-                <h3 className="text-lg sm:text-xl font-bold text-white">National Institute of Electronics & Information Technology (NIELIT)</h3>
-                <span className="text-sm font-semibold text-white/50 block mb-3">Gorakhpur, India</span>
-                <p className="text-sm text-white/70 leading-relaxed">
-                  B.Tech in Electronics & Communication Engineering (ECE). Successfully finished 1st year with core physics foundation, electronics basic setups, and algorithm structuring classes.
-                </p>
               </div>
             </div>
 
