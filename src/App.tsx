@@ -7,8 +7,7 @@ import {
 import { RevealLayer } from './components/RevealLayer';
 
 const BG_IMAGE_1 = import.meta.env.VITE_BG_IMAGE_1 || "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1920&auto=format&fit=crop";
-const BG_IMAGE_2 = import.meta.env.VITE_BG_IMAGE_2 || "https://images.unsplash.com/photo-1544256718-3bcf237f3974?q=80&w=1920&auto=format&fit=crop";
-
+const BG_IMAGE_2 = import.meta.env.VITE_BG_IMAGE_2 || "https://c4.wallpaperflare.com/wallpaper/170/298/393/animals-kali-linux-wallpaper-preview.jpg";
 export default function App() {
   const mouseRef = useRef({ x: -999, y: -999 });
   const smoothRef = useRef({ x: -999, y: -999 });
