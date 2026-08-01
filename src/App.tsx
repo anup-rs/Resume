@@ -285,7 +285,7 @@ export default function App() {
           style={{ animationDelay: '0.7s' }}
         >
           <p className="text-sm text-white/80 leading-relaxed">
-            First-year ECE student at NIELIT Gorakhpur building advanced Python bots and backend structures, with an ultimate goal in cybersecurity and ethical hacking.
+            ECE student at National Institue Of Electronics & Information Technology, Gorakhpur , self-taught developer. Python by day, backend systems by night — building now, breaking into cybersecurity next.
           </p>
         </div>
 
@@ -295,7 +295,7 @@ export default function App() {
           style={{ animationDelay: '0.85s' }}
         >
           <p className="text-xs sm:text-sm text-white/80 leading-relaxed">
-            Python, SQL, Flask, Django & React — from DSA algorithms to production codebases, I construct automation, manage persistent databases, and break systems down.
+            Python, SQL, Flask, Django & React in my toolkit — DSA-sharp, database-fluent, and chasing every bug until it gives up its secrets.
           </p>
 
           <div className="w-full bg-[#121214]/65 backdrop-blur-md border border-white/10 rounded-2xl p-2.5 flex items-center justify-between gap-3 shadow-xl">
