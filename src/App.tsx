@@ -5,9 +5,9 @@ import {
   Send, Terminal, ChevronRight, MapPin
 } from 'lucide-react';
 import { RevealLayer } from './components/RevealLayer';
-import baseImage from './base_image.png';
-import mainImage from './main_image.png';
-import sqlCertificate from './sql_advanced_certificate.jpg';
+import baseImage from './assets/base_image.png';
+import mainImage from './assets/main_image.png';
+import sqlCertificate from './assets/sql_advanced_certificate.jpg';
 
 const BG_IMAGE_1 = mainImage;
 const BG_IMAGE_2 = baseImage;
