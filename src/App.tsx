@@ -618,7 +618,7 @@ export default function App() {
         <div className="max-w-4xl mx-auto">
           <div className="flex flex-col mb-12 sm:mb-16 md:items-center md:text-center animate-fade-in">
             <span className="text-xs uppercase tracking-widest text-[#e8702a] font-bold mb-2">Milestones</span>
-            <h2 className="text-3xl sm:text-5xl font-playfair italic font-medium text-white mb-4">Achievements & Education</h2>
+            <h2 className="text-3xl sm:text-5xl font-playfair italic font-medium text-white mb-4">Education & Achievements</h2>
             <div className="w-12 h-1 bg-[#e8702a] rounded md:mx-auto" />
           </div>
 
