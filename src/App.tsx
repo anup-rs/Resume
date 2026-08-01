@@ -71,7 +71,7 @@ export default function App() {
   }, []);
 
   const handleCopyEmail = () => {
-    const contactEmail = import.meta.env.VITE_CONTACT_EMAIL;
+    const contactEmail = import.meta.env.VITE_CONTACT_EMAIL || "anupkushwaha470@gmail.com";
     navigator.clipboard.writeText(contactEmail);
     setCopied(true);
     showToast("Email copied to clipboard!");
@@ -91,7 +91,7 @@ export default function App() {
     }
     setFormSending(true);
     try {
-      const emailEndpoint = import.meta.env.VITE_CONTACT_EMAIL;
+      const emailEndpoint = import.meta.env.VITE_CONTACT_EMAIL || "anupkushwaha470@gmail.com";
       const response = await fetch(`https://formsubmit.co/ajax/${emailEndpoint}`, {
         method: "POST",
         headers: {
@@ -156,7 +156,7 @@ export default function App() {
           <svg className="w-6.5 h-6.5" viewBox="0 0 256 256" fill="#ffffff" xmlns="http://www.w3.org/2000/svg">
             <path d="M 256 256 L 128 256 L 0 128 L 128 128 Z M 256 128 L 128 128 L 0 0 L 128 0 Z" />
           </svg>
-          <span className="text-white text-2.5xl font-playfair italic">Anup Kushwaha</span>
+          <span className="text-white text-2.5xl font-playfair italic">Anup Kumar Kushwaha</span>
         </div>
 
         {/* Center pill (desktop) */}
@@ -729,8 +729,8 @@ export default function App() {
                   </div>
                   <div>
                     <span className="text-[10px] text-white/40 block">Email Address</span>
-                    <a href={`mailto:${import.meta.env.VITE_CONTACT_EMAIL}`} className="text-sm font-medium hover:text-[#e8702a] transition-colors cursor-pointer">
-                      {import.meta.env.VITE_CONTACT_EMAIL}
+                    <a href="mailto:anupkushwaha470@gmail.com" className="text-sm font-medium hover:text-[#e8702a] transition-colors cursor-pointer">
+                      anupkushwaha470@gmail.com
                     </a>
                   </div>
                 </div>
