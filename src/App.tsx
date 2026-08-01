@@ -631,10 +631,10 @@ export default function App() {
               </div>
               <div className="bg-[#121214] border border-white/5 rounded-2xl p-6 transition-all duration-300 hover:border-white/15">
                 <span className="text-[#e8702a] text-xs font-semibold uppercase tracking-wider block mb-1">Graduation 2029</span>
-                <h3 className="text-lg sm:text-xl font-bold text-white">National Institute of Electronics & Information Technology (NIELIT)</h3>
+                <h3 className="text-lg sm:text-xl font-bold text-white">National Institute of Electronics & Information Technology</h3>
                 <span className="text-sm font-semibold text-white/50 block mb-3">Gorakhpur, India</span>
                 <p className="text-sm text-white/70 leading-relaxed">
-                  B.Tech in Electronics & Communication Engineering (ECE). Successfully finished 1st year with core physics foundation, electronics basic setups, and algorithm structuring classes.
+                  B.Tech in Electronics & Communication Engineering (ECE). Year one down — electronics groundwork and algorithmic thinking, all while building projects on the side.
                 </p>
               </div>
             </div>
