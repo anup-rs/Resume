@@ -5,9 +5,10 @@ import {
   Send, Terminal, ChevronRight, MapPin
 } from 'lucide-react';
 import { RevealLayer } from './components/RevealLayer';
+import baseImage from './base_image.png';
 
 const BG_IMAGE_1 = import.meta.env.VITE_BG_IMAGE_1 || "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1920&auto=format&fit=crop";
-const BG_IMAGE_2 = "/base_image.png";
+const BG_IMAGE_2 = baseImage;
 export default function App() {
   const mouseRef = useRef({ x: -999, y: -999 });
   const smoothRef = useRef({ x: -999, y: -999 });
