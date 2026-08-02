@@ -8,6 +8,7 @@ import { RevealLayer } from './components/RevealLayer';
 import baseImage from './base_image.png';
 import mainImage from './main_image.png';
 import sqlCertificate from './sql_advanced_certificate.jpg';
+import { MagneticHeading } from './components/MagneticHeading.tsx';
 
 const BG_IMAGE_1 = mainImage;
 const BG_IMAGE_2 = baseImage;
@@ -319,13 +320,13 @@ export default function App() {
               className="block font-playfair italic font-normal text-5xl sm:text-7xl md:text-8xl hero-anim hero-reveal"
               style={{ letterSpacing: '-0.05em', animationDelay: '0.25s' }}
             >
-              Code meets
+              <MagneticHeading text="Code meets" />
             </span>
             <span
               className="block font-normal text-5xl sm:text-7xl md:text-8xl -mt-1 hero-anim hero-reveal"
               style={{ letterSpacing: '-0.08em', animationDelay: '0.42s' }}
             >
-              curiosity
+              <MagneticHeading text="curiosity" />
             </span>
           </h1>
         </div>
