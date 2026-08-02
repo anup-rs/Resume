@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import {
   Menu, X, Mail, Copy, Check,
-  Code, Database, Cpu, Award, BookOpen, ExternalLink,
+  Cpu, Award, BookOpen, ExternalLink,
   Send, Terminal, ChevronRight, MapPin
 } from 'lucide-react';
 import { RevealLayer } from './components/RevealLayer';
@@ -11,16 +11,57 @@ import sqlCertificate from './sql_advanced_certificate.jpg';
 
 const BG_IMAGE_1 = mainImage;
 const BG_IMAGE_2 = baseImage;
+
+function AnimatedBar({ percent, colorClass }: { percent: number; colorClass: string }) {
+  const barRef = useRef<HTMLDivElement>(null);
+  const [width, setWidth] = useState(0);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => setWidth(percent), 100);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.3 }
+    );
+    if (barRef.current) observer.observe(barRef.current);
+    return () => observer.disconnect();
+  }, [percent]);
+
+  return (
+    <div ref={barRef} className="h-1.5 bg-white/10 rounded-full overflow-hidden">
+      <div
+        className={`h-full rounded-full transition-all duration-1000 ease-out ${colorClass}`}
+        style={{ width: `${width}%` }}
+      />
+    </div>
+  );
+}
+
 export default function App() {
   const mouseRef = useRef({ x: -999, y: -999 });
   const smoothRef = useRef({ x: -999, y: -999 });
   const rafRef = useRef<number | null>(null);
+  const toolsRef = useRef<HTMLDivElement>(null);
   const [cursorPos, setCursorPos] = useState({ x: -999, y: -999 });
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeTab, setActiveTab] = useState('Home');
   const [toastMessage, setToastMessage] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
+
+  const [activeTool, setActiveTool] = useState<string | null>(null);
+
+  const toolDescriptions: Record<string, string> = {
+    'Tkinter': 'Python GUI toolkit — used in Election & Hospital management systems',
+    'Pillow': 'Image processing library — powers Lumio\'s dynamic welcome cards',
+    'Git': 'Version control for every project in this portfolio',
+    'GitHub': 'Hosting, CI, and collaboration for all repos',
+    'Railway': 'Cloud deployment for Lumio and Art-Scape Studio',
+    'Kali Linux (Basics)': 'Security-focused Linux distro — early steps into ethical hacking',
+  };
 
   // Forms and state handlers
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
@@ -68,6 +109,16 @@ export default function App() {
       window.removeEventListener('scroll', handleScroll);
       if (rafRef.current) cancelAnimationFrame(rafRef.current);
     };
+  }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (toolsRef.current && !toolsRef.current.contains(e.target as Node)) {
+        setActiveTool(null);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
   const handleCopyEmail = () => {
@@ -478,7 +529,11 @@ export default function App() {
             {/* Box 1: Languages & AI */}
             <div id="skills-languages" className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 shadow-lg hover:bg-white/8 hover:border-white/20 transition-all duration-300">
               <div className="flex items-center gap-3 mb-4">
-                <Code className="text-[#e8702a]" size={20} />
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#e8702a]">
+                  <path d="M8 6 3 12l5 6" />
+                  <path d="M16 6l5 6-5 6" />
+                  <path d="M12 9l.6 1.4L14 11l-1.4.6L12 13l-.6-1.4L10 11l1.4-.6L12 9Z" fill="currentColor" stroke="none" />
+                </svg>
                 <h3 className="font-bold text-white">Languages & AI</h3>
               </div>
               <ul className="space-y-3.5 mt-2">
@@ -487,36 +542,28 @@ export default function App() {
                     <span>Python</span>
                     <span>90%</span>
                   </div>
-                  <div className="h-1 bg-white/10 rounded-full overflow-hidden">
-                    <div className="h-full bg-[#e8702a] rounded-full" style={{ width: '90%' }} />
-                  </div>
+                  <AnimatedBar percent={90} colorClass="bg-[#e8702a]" />
                 </li>
                 <li>
                   <div className="flex justify-between text-xs text-white/60 mb-1">
                     <span>Prompt Engineering</span>
                     <span>70%</span>
                   </div>
-                  <div className="h-1 bg-white/10 rounded-full overflow-hidden">
-                    <div className="h-full bg-[#e8702a]/80 rounded-full" style={{ width: '70%' }} />
-                  </div>
+                  <AnimatedBar percent={70} colorClass="bg-[#e8702a]/80" />
                 </li>
                 <li>
                   <div className="flex justify-between text-xs text-white/60 mb-1">
                     <span>C (Basics)</span>
                     <span>50%</span>
                   </div>
-                  <div className="h-1 bg-white/10 rounded-full overflow-hidden">
-                    <div className="h-full bg-[#e8702a]/60 rounded-full" style={{ width: '50%' }} />
-                  </div>
+                  <AnimatedBar percent={50} colorClass="bg-[#e8702a]/60" />
                 </li>
                 <li>
                   <div className="flex justify-between text-xs text-white/60 mb-1">
                     <span>Kotlin (Basics)</span>
                     <span>40%</span>
                   </div>
-                  <div className="h-1 bg-white/10 rounded-full overflow-hidden">
-                    <div className="h-full bg-[#e8702a]/40 rounded-full" style={{ width: '40%' }} />
-                  </div>
+                  <AnimatedBar percent={40} colorClass="bg-[#e8702a]/40" />
                 </li>
               </ul>
               <div className="mt-5 pt-4 border-t border-white/5 flex gap-2 flex-wrap">
@@ -528,7 +575,12 @@ export default function App() {
             {/* Box 2: Databases & Web */}
             <div id="skills-databases" className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 shadow-lg hover:bg-white/8 hover:border-white/20 transition-all duration-300">
               <div className="flex items-center gap-3 mb-4">
-                <Database className="text-violet-400" size={20} />
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-violet-400">
+                  <path d="M9.5 2.5a3.5 3.5 0 0 1 5 0" />
+                  <ellipse cx="12" cy="7" rx="6" ry="2.2" />
+                  <path d="M6 7v5.5c0 1.2 2.7 2.2 6 2.2s6-1 6-2.2V7" />
+                  <path d="M6 12.5V18c0 1.2 2.7 2.2 6 2.2s6-1 6-2.2v-5.5" />
+                </svg>
                 <h3 className="font-bold text-white">Databases & Web</h3>
               </div>
               <ul className="space-y-3.5 mt-2">
@@ -537,45 +589,35 @@ export default function App() {
                     <span>HTML</span>
                     <span>100%</span>
                   </div>
-                  <div className="h-1 bg-white/10 rounded-full overflow-hidden">
-                    <div className="h-full bg-violet-400 rounded-full" style={{ width: '100%' }} />
-                  </div>
+                  <AnimatedBar percent={100} colorClass="bg-violet-400" />
                 </li>
                 <li>
                   <div className="flex justify-between text-xs text-white/60 mb-1">
                     <span>npm</span>
                     <span>90%</span>
                   </div>
-                  <div className="h-1 bg-white/10 rounded-full overflow-hidden">
-                    <div className="h-full bg-violet-400/90 rounded-full" style={{ width: '90%' }} />
-                  </div>
+                  <AnimatedBar percent={90} colorClass="bg-violet-400/90" />
                 </li>
                 <li>
                   <div className="flex justify-between text-xs text-white/60 mb-1">
                     <span>SQL / MySQL</span>
                     <span>80%</span>
                   </div>
-                  <div className="h-1 bg-white/10 rounded-full overflow-hidden">
-                    <div className="h-full bg-violet-400/80 rounded-full" style={{ width: '80%' }} />
-                  </div>
+                  <AnimatedBar percent={80} colorClass="bg-violet-400/80" />
                 </li>
                 <li>
                   <div className="flex justify-between text-xs text-white/60 mb-1">
                     <span>CSS</span>
                     <span>80%</span>
                   </div>
-                  <div className="h-1 bg-white/10 rounded-full overflow-hidden">
-                    <div className="h-full bg-violet-400/80 rounded-full" style={{ width: '80%' }} />
-                  </div>
+                  <AnimatedBar percent={80} colorClass="bg-violet-400/80" />
                 </li>
                 <li>
                   <div className="flex justify-between text-xs text-white/60 mb-1">
                     <span>Supabase</span>
                     <span>75%</span>
                   </div>
-                  <div className="h-1 bg-white/10 rounded-full overflow-hidden">
-                    <div className="h-full bg-violet-400/70 rounded-full" style={{ width: '75%' }} />
-                  </div>
+                  <AnimatedBar percent={75} colorClass="bg-violet-400/70" />
                 </li>
               </ul>
             </div>
@@ -583,17 +625,26 @@ export default function App() {
             {/* Box 3: Tools & OS */}
             <div id="skills-tools" className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 shadow-lg hover:bg-white/8 hover:border-white/20 transition-all duration-300">
               <div className="flex items-center gap-3 mb-4">
-                <Cpu className="text-emerald-400" size={20} />
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-emerald-400">
+                  <path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.1 2.1-2.5-2.5 2.1-2.1Z" />
+                </svg>
                 <h3 className="font-bold text-white">Tools & OS</h3>
               </div>
-              <div className="flex flex-wrap gap-2 mt-2">
+              <div ref={toolsRef} className="flex flex-wrap gap-2 mt-2 relative">
                 {['Tkinter', 'Pillow', 'Git', 'GitHub', 'Railway', 'Kali Linux (Basics)'].map(tool => (
-                  <span
-                    key={tool}
-                    className="text-xs bg-white/5 border border-white/10 hover:border-emerald-400/30 px-3 py-1.5 rounded-xl text-white/80 transition-colors"
-                  >
-                    {tool}
-                  </span>
+                  <div key={tool} className="relative">
+                    <button
+                      onClick={() => setActiveTool(activeTool === tool ? null : tool)}
+                      className="text-xs bg-white/5 border border-white/10 hover:border-emerald-400/40 px-3 py-1.5 rounded-xl text-white/80 transition-colors cursor-pointer"
+                    >
+                      {tool}
+                    </button>
+                    {activeTool === tool && (
+                      <div className="absolute z-50 bottom-full left-1/2 -translate-x-1/2 mb-2 w-44 bg-black border border-white/15 rounded-xl p-3 text-[11px] text-white/70 leading-relaxed shadow-xl">
+                        {toolDescriptions[tool]}
+                      </div>
+                    )}
+                  </div>
                 ))}
               </div>
             </div>
