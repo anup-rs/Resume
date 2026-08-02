@@ -353,7 +353,7 @@ export default function App() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* Project 1 */}
-            <div id="project-lumio" className="bg-[#121214] border border-white/5 rounded-2xl p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1.5 glow-hover-orange">
+            <div id="project-lumio" className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1.5 hover:bg-white/8 hover:border-white/20 glow-hover-orange">
               <div>
                 <div className="flex items-center justify-between mb-4">
                   <div className="p-2.5 bg-[#e8702a]/15 text-[#e8702a] rounded-xl flex items-center justify-center">
@@ -377,7 +377,7 @@ export default function App() {
             </div>
 
             {/* Project 2 */}
-            <div id="project-artscape" className="bg-[#121214] border border-white/5 rounded-2xl p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1.5 glow-hover-purple">
+            <div id="project-artscape" className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1.5 hover:bg-white/8 hover:border-white/20 glow-hover-orange">
               <div>
                 <div className="flex items-center justify-between mb-4">
                   <div className="p-2.5 bg-[#e8702a]/15 text-[#e8702a] rounded-xl flex items-center justify-center">
@@ -401,7 +401,7 @@ export default function App() {
             </div>
 
             {/* Project 3 */}
-            <div id="project-election" className="bg-[#121214] border border-white/5 rounded-2xl p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1.5 glow-hover-orange">
+            <div id="project-election" className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1.5 hover:bg-white/8 hover:border-white/20 glow-hover-orange">
               <div>
                 <div className="flex items-center justify-between mb-4">
                   <div className="p-2.5 bg-violet-500/10 text-violet-400 rounded-xl flex items-center justify-center">
@@ -423,7 +423,7 @@ export default function App() {
             </div>
 
             {/* Project 4 */}
-            <div id="project-hospital" className="bg-[#121214] border border-white/5 rounded-2xl p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1.5 glow-hover-purple">
+            <div id="project-hospital" className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1.5 hover:bg-white/8 hover:border-white/20 glow-hover-orange">
               <div>
                 <div className="flex items-center justify-between mb-4">
                   <div className="p-2.5 bg-emerald-500/10 text-emerald-400 rounded-xl flex items-center justify-center">
@@ -462,7 +462,7 @@ export default function App() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
 
             {/* Box 1: Languages & AI */}
-            <div id="skills-languages" className="bg-[#121214] border border-white/5 rounded-2xl p-6 shadow-lg">
+            <div id="skills-languages" className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 shadow-lg hover:bg-white/8 hover:border-white/20 transition-all duration-300">
               <div className="flex items-center gap-3 mb-4">
                 <Code className="text-[#e8702a]" size={20} />
                 <h3 className="font-bold text-white">Languages & AI</h3>
