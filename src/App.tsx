@@ -39,9 +39,7 @@ export default function App() {
 
     const updateSpotlight = () => {
       if (mouseRef.current.x !== -999) {
-        smoothRef.current.x += (mouseRef.current.x - smoothRef.current.x) * 0.1;
-        smoothRef.current.y += (mouseRef.current.y - smoothRef.current.y) * 0.1;
-        setCursorPos({ x: smoothRef.current.x, y: smoothRef.current.y });
+        setCursorPos({ x: mouseRef.current.x, y: mouseRef.current.y });
       }
       rafRef.current = requestAnimationFrame(updateSpotlight);
     };
