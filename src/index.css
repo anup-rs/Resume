@@ -16,6 +16,7 @@
     transform: translateY(28px);
     filter: blur(12px);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
@@ -28,6 +29,7 @@
     opacity: 0;
     transform: translateY(20px);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
@@ -38,6 +40,7 @@
   0% {
     transform: scale(1.12);
   }
+
   100% {
     transform: scale(1);
   }
@@ -64,6 +67,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   .hero-anim,
   .hero-zoom {
     animation: none;
@@ -79,13 +83,16 @@ html {
 ::-webkit-scrollbar {
   width: 8px;
 }
+
 ::-webkit-scrollbar-track {
   background: #000000;
 }
+
 ::-webkit-scrollbar-thumb {
   background: #1e1e1e;
   border-radius: 4px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: #333333;
 }
@@ -93,16 +100,27 @@ html {
 /* Background grid styling */
 .bg-grid-cyber {
   background-size: 50px 50px;
-  background-image: 
+  background-image:
     linear-gradient(to right, rgba(232, 112, 42, 0.05) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(232, 112, 42, 0.05) 1px, transparent 1px);
 }
 
 /* Float particles animation */
 @keyframes float {
-  0% { transform: translateY(0px) rotate(0deg); opacity: 0.18; }
-  50% { transform: translateY(-15px) rotate(180deg); opacity: 0.5; }
-  100% { transform: translateY(0px) rotate(360deg); opacity: 0.18; }
+  0% {
+    transform: translateY(0px) rotate(0deg);
+    opacity: 0.18;
+  }
+
+  50% {
+    transform: translateY(-15px) rotate(180deg);
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: translateY(0px) rotate(360deg);
+    opacity: 0.18;
+  }
 }
 
 .particle {
@@ -126,4 +144,19 @@ html {
 .glow-hover-orange:hover {
   box-shadow: 0 0 40px rgba(232, 112, 42, 0.28);
   border-color: rgba(232, 112, 42, 0.5);
+}
+
+.glow-hover-emerald:hover {
+  box-shadow: 0 0 40px rgba(52, 211, 153, 0.25);
+  border-color: rgba(52, 211, 153, 0.4);
+}
+
+.glow-hover-rose:hover {
+  box-shadow: 0 0 40px rgba(244, 63, 94, 0.25);
+  border-color: rgba(244, 63, 94, 0.4);
+}
+
+.glow-hover-artscape:hover {
+  box-shadow: 0 0 40px rgba(243, 171, 77, 0.25);
+  border-color: rgba(243, 171, 77, 0.4);
 }

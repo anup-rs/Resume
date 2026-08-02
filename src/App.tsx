@@ -343,7 +343,9 @@ export default function App() {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-24 px-6 md:px-16 lg:px-24 bg-black relative border-t border-white/10 bg-grid-cyber">
+      <section id="projects" className="py-24 px-6 md:px-16 lg:px-24 bg-black relative border-t border-white/10 overflow-hidden">
+        <div className="absolute top-0 left-0 w-96 h-96 bg-[#e8702a]/10 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-violet-500/8 rounded-full blur-[120px] pointer-events-none" />
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col mb-12 sm:mb-16">
             <span className="text-xs uppercase tracking-widest text-[#e8702a] font-bold mb-2">Portfolio</span>
@@ -353,11 +355,14 @@ export default function App() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* Project 1 */}
-            <div id="project-lumio" className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1.5 hover:bg-white/8 hover:border-white/20 glow-hover-orange">
+            <div id="project-lumio" className="bg-white/[0.07] backdrop-blur-xl backdrop-saturate-150 border border-white/10 rounded-2xl p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1.5 hover:bg-white/[0.1] hover:border-white/20 glow-hover-emerald">
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <div className="p-2.5 bg-[#e8702a]/15 text-[#e8702a] rounded-xl flex items-center justify-center">
-                    <Terminal size={20} />
+                  <div className="p-2.5 bg-emerald-500/15 text-emerald-400 rounded-xl flex items-center justify-center">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M6 3v14a4 4 0 0 0 4 4h8" />
+                      <circle cx="18" cy="7" r="1.5" fill="currentColor" stroke="none" />
+                    </svg>
                   </div>
                   <a href="https://github.com/anup-rs/lumio" target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-white transition-colors cursor-pointer">
                     <ExternalLink size={18} />
@@ -377,11 +382,14 @@ export default function App() {
             </div>
 
             {/* Project 2 */}
-            <div id="project-artscape" className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1.5 hover:bg-white/8 hover:border-white/20 glow-hover-orange">
+            <div id="project-artscape" className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1.5 hover:bg-white/8 hover:border-white/20 glow-hover-artscape">
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <div className="p-2.5 bg-[#e8702a]/15 text-[#e8702a] rounded-xl flex items-center justify-center">
-                    <Code size={20} />
+                  <div className="p-2.5 bg-[#F3AA4D]/15 text-[#F3AA4D] rounded-xl flex items-center justify-center">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M5 20 11 4a1 1 0 0 1 2 0l6 16" />
+                      <path d="M8 14h8" />
+                    </svg>
                   </div>
                   <a href="https://github.com/Anup4503/artscape.git" target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-white transition-colors cursor-pointer">
                     <ExternalLink size={18} />
@@ -401,11 +409,15 @@ export default function App() {
             </div>
 
             {/* Project 3 */}
-            <div id="project-election" className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1.5 hover:bg-white/8 hover:border-white/20 glow-hover-orange">
+            <div id="project-election" className="bg-white/[0.07] backdrop-blur-xl backdrop-saturate-150 border border-white/10 rounded-2xl p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1.5 hover:bg-white/[0.1] hover:border-white/20 glow-hover-purple">
               <div>
                 <div className="flex items-center justify-between mb-4">
                   <div className="p-2.5 bg-violet-500/10 text-violet-400 rounded-xl flex items-center justify-center">
-                    <Database size={20} />
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <rect x="3" y="10" width="18" height="11" rx="1" />
+                      <path d="M3 10 7 4h10l4 6" />
+                      <path d="M9 14l2 2 4-4" />
+                    </svg>
                   </div>
                   <span className="text-white/40"><ExternalLink size={18} className="opacity-20" /></span>
                 </div>
@@ -423,11 +435,14 @@ export default function App() {
             </div>
 
             {/* Project 4 */}
-            <div id="project-hospital" className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1.5 hover:bg-white/8 hover:border-white/20 glow-hover-orange">
+            <div id="project-hospital" className="bg-white/[0.07] backdrop-blur-xl backdrop-saturate-150 border border-white/10 rounded-2xl p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1.5 hover:bg-white/[0.1] hover:border-white/20 glow-hover-rose">
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <div className="p-2.5 bg-emerald-500/10 text-emerald-400 rounded-xl flex items-center justify-center">
-                    <Cpu size={20} />
+                  <div className="p-2.5 bg-rose-500/10 text-rose-400 rounded-xl flex items-center justify-center">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M3 12h4l2-5 3 10 2-5h7" />
+                      <path d="M12 4v4M10 6h4" />
+                    </svg>
                   </div>
                   <span className="text-white/40"><ExternalLink size={18} className="opacity-20" /></span>
                 </div>
@@ -449,9 +464,8 @@ export default function App() {
 
       {/* Skills Section */}
       <section id="skills" className="py-24 px-6 md:px-16 lg:px-24 bg-zinc-950 relative border-t border-white/10 overflow-hidden">
-        {/* Subtle grid elements */}
-        <div className="absolute top-0 right-0 w-80 h-80 bg-[#e8702a]/10 rounded-full blur-[100px] pointer-events-none" />
-
+        <div className="absolute top-0 right-0 w-96 h-96 bg-[#e8702a]/10 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-violet-500/8 rounded-full blur-[120px] pointer-events-none" />
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col mb-12 sm:mb-16">
             <span className="text-xs uppercase tracking-widest text-[#e8702a] font-bold mb-2">Expertise</span>
@@ -512,7 +526,7 @@ export default function App() {
             </div>
 
             {/* Box 2: Databases & Web */}
-            <div id="skills-databases" className="bg-[#121214] border border-white/5 rounded-2xl p-6 shadow-lg">
+            <div id="skills-databases" className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 shadow-lg hover:bg-white/8 hover:border-white/20 transition-all duration-300">
               <div className="flex items-center gap-3 mb-4">
                 <Database className="text-violet-400" size={20} />
                 <h3 className="font-bold text-white">Databases & Web</h3>
@@ -567,7 +581,7 @@ export default function App() {
             </div>
 
             {/* Box 3: Tools & OS */}
-            <div id="skills-tools" className="bg-[#121214] border border-white/5 rounded-2xl p-6 shadow-lg">
+            <div id="skills-tools" className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 shadow-lg hover:bg-white/8 hover:border-white/20 transition-all duration-300">
               <div className="flex items-center gap-3 mb-4">
                 <Cpu className="text-emerald-400" size={20} />
                 <h3 className="font-bold text-white">Tools & OS</h3>
@@ -585,7 +599,7 @@ export default function App() {
             </div>
 
             {/* Box 4: Learning Focus */}
-            <div id="skills-learning" className="bg-[#121214] border border-white/5 rounded-2xl p-6 shadow-lg relative overflow-hidden">
+            <div id="skills-learning" className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 shadow-lg hover:bg-white/8 hover:border-white/20 transition-all duration-300 relative overflow-hidden">
               <div className="absolute top-0 right-0 p-3 bg-amber-500/10 text-amber-400 rounded-bl-xl text-[10px] font-bold tracking-wider uppercase">
                 Active
               </div>
@@ -614,7 +628,9 @@ export default function App() {
       </section>
 
       {/* Experience & Milestones Section */}
-      <section id="achievements" className="py-24 px-6 md:px-16 lg:px-24 bg-black relative border-t border-white/10">
+      <section id="achievements" className="py-24 px-6 md:px-16 lg:px-24 bg-black relative border-t border-white/10 overflow-hidden">
+        <div className="absolute top-0 left-0 w-96 h-96 bg-purple-500/8 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#e8702a]/10 rounded-full blur-[120px] pointer-events-none" />
         <div className="max-w-4xl mx-auto">
           <div className="flex flex-col mb-12 sm:mb-16 md:items-center md:text-center animate-fade-in">
             <span className="text-xs uppercase tracking-widest text-[#e8702a] font-bold mb-2">Milestones</span>
@@ -626,7 +642,7 @@ export default function App() {
 
             {/* Milestone 1 */}
             <div id="milestone-college" className="relative group">
-              <div className="absolute -left-[31px] sm:-left-[39px] top-1 bg-[#e8702a] text-black w-6.5 h-6.5 rounded-full flex items-center justify-center border border-black z-40 transition-transform duration-300 group-hover:scale-110">
+              <div className="absolute -left-6 sm:-left-8 -translate-x-1/2 top-1 bg-[#e8702a] text-black w-[26px] h-[26px] rounded-full flex items-center justify-center border border-black z-40 transition-transform duration-300 group-hover:scale-110">
                 <BookOpen size={13} />
               </div>
               <div className="bg-[#121214] border border-white/5 rounded-2xl p-6 transition-all duration-300 hover:border-white/15">
@@ -641,7 +657,7 @@ export default function App() {
 
             {/* Milestone Cert */}
             <div id="milestone-sql-cert" className="relative group">
-              <div className="absolute -left-[31px] sm:-left-[39px] top-1 bg-[#e8702a] text-black w-6.5 h-6.5 rounded-full flex items-center justify-center border border-black z-40 transition-transform duration-300 group-hover:scale-110">
+              <div className="absolute -left-6 sm:-left-8 -translate-x-1/2 top-1 bg-[#e8702a] text-black w-[26px] h-[26px] rounded-full flex items-center justify-center border border-black z-40 transition-transform duration-300 group-hover:scale-110">
                 <Award size={13} className="shrink-0" />
               </div>
               <div className="bg-[#121214] border border-white/5 rounded-2xl p-6 transition-all duration-300 hover:border-white/15">
@@ -676,7 +692,7 @@ export default function App() {
 
             {/* Milestone 2 */}
             <div id="milestone-hackstorm" className="relative group">
-              <div className="absolute -left-[31px] sm:-left-[39px] top-1 bg-violet-400 text-black w-6.5 h-6.5 rounded-full flex items-center justify-center border border-black z-40 transition-transform duration-300 group-hover:scale-110">
+              <div className="absolute -left-6 sm:-left-8 -translate-x-1/2 top-1 bg-[#e8702a] text-black w-[26px] h-[26px] rounded-full flex items-center justify-center border border-black z-40 transition-transform duration-300 group-hover:scale-110">
                 <Award size={13} className="shrink-0" />
               </div>
               <div className="bg-[#121214] border border-white/5 rounded-2xl p-6 transition-all duration-300 hover:border-white/15">
@@ -691,7 +707,7 @@ export default function App() {
 
             {/* Milestone 3 */}
             <div id="milestone-cyber" className="relative group">
-              <div className="absolute -left-[31px] sm:-left-[39px] top-1 bg-emerald-400 text-black w-6.5 h-6.5 rounded-full flex items-center justify-center border border-black z-40 transition-transform duration-300 group-hover:scale-110">
+              <div className="absolute -left-6 sm:-left-8 -translate-x-1/2 top-1 bg-[#e8702a] text-black w-[26px] h-[26px] rounded-full flex items-center justify-center border border-black z-40 transition-transform duration-300 group-hover:scale-110">
                 <Cpu size={13} />
               </div>
               <div className="bg-[#121214] border border-white/5 rounded-2xl p-6 transition-all duration-300 hover:border-white/15">
@@ -709,7 +725,9 @@ export default function App() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-24 px-6 md:px-16 lg:px-24 bg-zinc-950 relative border-t border-white/10">
+      <section id="contact" className="py-24 px-6 md:px-16 lg:px-24 bg-zinc-950 relative border-t border-white/10 overflow-hidden">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-violet-500/8 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#e8702a]/10 rounded-full blur-[120px] pointer-events-none" />
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
 
@@ -820,12 +838,32 @@ export default function App() {
       </section>
 
       {/* Footer */}
-      <footer className="py-8 bg-zinc-950 border-t border-white/5 text-center text-xs text-white/40">
+      <footer className="py-8 bg-black/40 backdrop-blur-md border-t border-white/10 text-center text-xs text-white/40">
         <div className="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p>© {new Date().getFullYear()} Anup Kumar Kushwaha. All rights reserved.</p>
-          <div className="flex gap-4">
-            <a href="https://github.com/anup-rs" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors cursor-pointer">GitHub</a>
-            <a href="https://linkedin.com/in/anup-rs" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors cursor-pointer">LinkedIn</a>
+          <div className="flex items-center gap-2">
+
+            <a href="https://github.com/anup-rs"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub Profile"
+              className="p-2 bg-white/5 hover:bg-[#e8702a] text-white/60 hover:text-white rounded-lg transition-all duration-200 hover:scale-110 active:scale-95 border border-white/5 hover:border-transparent flex items-center justify-center cursor-pointer"
+            >
+              <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+              </svg>
+            </a>
+
+            <a href="https://linkedin.com/in/anup-rs"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn Profile"
+              className="p-2 bg-white/5 hover:bg-[#e8702a] text-white/60 hover:text-white rounded-lg transition-all duration-200 hover:scale-110 active:scale-95 border border-white/5 hover:border-transparent flex items-center justify-center cursor-pointer"
+            >
+              <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+              </svg>
+            </a>
           </div>
         </div>
       </footer>
