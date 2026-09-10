@@ -166,7 +166,7 @@ export default function App() {
       } else {
         showToast(result.message || "Failed to send message. Please try again.");
       }
-    } catch (err) {
+    } catch {
       showToast("Network error. Please check your connection.");
     } finally {
       setFormSending(false);
